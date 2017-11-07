@@ -1,10 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <h3>Money: <span id="money">0</span>  MPS: <span id="moneyPerSecond">0</span><br /> <button onclick="moneyClick()">Hack</button></h3>
+    <h3>Christmas Cookies: <span id="Cookies">0</span>  MPS: <span id="cookiesPerSecond">0</span><br /> <button onclick="ChristmasCookiesClick()">Bake Cookies</button></h3>
 </head>
 <body>
-    <h3> Hacker Earnings</h3>
+    <h3> </h3>
     <p>Click Upgrade: <span id="clickUpgradeCost">100</span> <button onclick="buyClickUpgrade()">Buy Click Upgrade</button>
     <p><button onclick="buyBeginner()">Buy Beginner</button> Cost: <span id="beginnerCost">10</span></p>
 </body>
@@ -12,29 +12,29 @@
 
 
 <script>
-    var money = 0;
+    var Cookies = 0;
     var beginner = 0;
     var mpc = 1;
-    var moneyPerSecond = 0;
+    var cookiesPerSecond = 0;
     var clicks = 0;
 
-    function moneyClick() {
+    function ChristmasCookiesClick() {
         money += mpc;
         clicks += 1;
-        document.getElementById("money").innerHTML = prettify(money);
+        document.getElementById("ChristmasCookies").innerHTML = prettify(money);
     }
 
     function mps() {
         money += moneyPerSecond;
-        document.getElementById('money').innerHTML = prettify(money);
-        document.getElementById('moneyPerSecond').innerHTML = prettify(moneyPerSecond);
+        document.getElementById('ChristmasCookies').innerHTML = prettify(ChristmasCookies);
+        document.getElementById('cookiesPerSecond').innerHTML = prettify(cookiesPerSecond);
     }
 
     function buyClickUpgrade() {
         var clickUpgradeCost = Math.floor(100 * Math.pow(1.0, mpc));
-        if (money >= clickUpgradeCost) {
+        if (ChristmasCookies >= clickUpgradeCost) {
             mpc++;
-            money -= clickUpgradeCost;
+            ChristmasCookies -= clickUpgradeCost;
             document.getElementById('clickUpgradeCost').innerHTML = clickUpgradeCost;
         }
         var nextCost = Math.floor(10 * Math.pow(3.2, mpc));
@@ -43,12 +43,12 @@
 
     function buyBeginner() {
         var beginnerCost = Math.floor(10 * Math.pow(1.1, beginner));
-        if (money >= beginnerCost) {
+        if (ChristmasCookies >= beginnerCost) {
             beginner += 0.1;
-            moneyPerSecond += 0.1;
-            money -= beginnerCost;
-            document.getElementById('money').innerHTML = prettify(money);
-            document.getElementById('moneyPerSecond').innerHTML = prettify(moneyPerSecond);
+            cookiesPerSecond += 0.1;
+            ChristmasCookies -= beginnerCost;
+            document.getElementById('ChristmasCookies').innerHTML = prettify(ChristmasCookies);
+            document.getElementById('cookiesPerSecond').innerHTML = prettify(cookiesPerSecond);
         }
         var nextCost = Math.floor(10 * Math.pow(3.2, beginner));
         document.getElementById('beginnerCost').innerHTML = prettify(nextCost);
