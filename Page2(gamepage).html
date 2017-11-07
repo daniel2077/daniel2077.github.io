@@ -1,22 +1,95 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    
-    <link href="../../../../Desktop/Github/daniel20773.github.io/Gamepage(css).css" rel="stylesheet" />
+
+
     <script src="../../../../Desktop/Github/daniel20773.github.io/JSGamepage.js"></script>
-    <meta charset="utf-8" />
-    <title>Cookie clicker game</title>
+    <link href="../../../../Desktop/Github/daniel20773.github.io/Gamepage(css).css" rel="stylesheet" />
+    <title>Cookie Clicker</title>
 </head>
 <body>
-    <div id=header>
-        <div class=cookies>0 Cookies!</div>
-        <span id=multiplier>1</span>
+
+    <!-- YOUR STATS -->
+    <p id="cpower">Click Power : <span id="clickPower">1</span>×</p>
+
+    <p id="cps">Cookies / sec : <span id="tcps">0</span></p>
+
+    <p id="text">COOKIES    : <span id="text2">0</span></p>
+    <!-- YOUR STATS END -->
+    <!-- COOKIE -->
+    <div id="c">
+
+        <svg width="500" height="500">
+
+            <circle fill="#AA9955" cx="300" cy="200" r="200"></circle>
+            <circle fill="brown" cx="346" cy="144" r="10"></circle>
+            <circle fill="brown" cx="288" cy="311" r="10"></circle>
+            <circle fill="brown" cx="278" cy="211" r="10"></circle>
+            <circle fill="brown" cx="334" cy="291" r="10"></circle>
+            <circle fill="brown" cx="199" cy="299" r="10"></circle>
+            <circle fill="brown" cx="187" cy="199" r="10"></circle>
+            <circle fill="brown" cx="434" cy="289" r="10"></circle>
+            <circle fill="brown" cx="256" cy="56" r="10"></circle>
+            <circle fill="brown" cx="422" cy="215" r="10"></circle>
+
+        </svg>
+
     </div>
-    <div id=content>
-        <img src="https://puu.sh/tkC9V/42de08e4e8.png" alt="Cookie picture" id=cookie ontouchstart="zoom(1)" ontouchend="zoom(0)">
+    <!-- COOKIE END -->
+    <!-- SHOP -->
+    <div id="shop">
+
+        SHOP
+
+        <!-- CLICK POWER -->
+        <p id="p1">
+            Click Power <span id="price1">100</span> cookies
+            <div id="buy1">
+                Buy
+            </div>
+
+        </p>
+        <!-- CLICK POWER END -->
+
+        <br />
+
+        <!-- AUTO CLICK -->
+        <p id="p2">
+            Auto Click 1 cps <span id="price2">20</span> cookies
+            <div id="buy2">
+                Buy
+            </div>
+        </p>
+        <!-- AUTO CLICK END -->
+
+        <br />
+
+        <!-- GRANDMA -->
+        <p id="p3">
+            Grandma 2 cps <span id="price3">50</span> cookies
+            <div id="buy3">
+                Buy
+            </div>
+        </p>
+        <!-- GRANDMA END -->
+
+        <br />
+
+        <!-- COOKIE FARM -->
+        <p id="p4">
+            Cookie Farm 5 cps <span id="price4">200</span> cookies
+            <div id="buy4">
+                Buy
+            </div>
+        </p>
+        <!-- COOKIE FARM END -->
+
+        <br />
+
+        <p>more upgrades coming soon!</p>
+
     </div>
-    <div id=footer>
-        <button onclick="upgrade()">Upgrade<br>(25)</button>
-    </div>
+    <!-- SHOP END -->
+
 </body>
 </html>
