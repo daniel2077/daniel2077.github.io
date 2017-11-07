@@ -2,14 +2,21 @@
 <html>
 <head>
     
-    <script src="JSGamepage.js"></script>
-    <link href="Gamepage(css).css" rel="stylesheet" />
+    <link href="../../../../Desktop/Github/daniel20773.github.io/Gamepage(css).css" rel="stylesheet" />
+    <script src="../../../../Desktop/Github/daniel20773.github.io/JSGamepage.js"></script>
     <meta charset="utf-8" />
-    <title>Christmas Quiz </title>
+    <title>Cookie clicker game</title>
 </head>
 <body>
-    <div id="quiz"></div>
-    <button id="submit">Get Results</button>
-    <div id="results"></div>
+    <div id=header>
+        <div class=cookies>0 Cookies!</div>
+        <span id=multiplier>1</span>
+    </div>
+    <div id=content>
+        <img src="https://puu.sh/tkC9V/42de08e4e8.png" alt="Cookie picture" id=cookie ontouchstart="zoom(1)" ontouchend="zoom(0)">
+    </div>
+    <div id=footer>
+        <button onclick="upgrade()">Upgrade<br>(25)</button>
+    </div>
 </body>
 </html>
