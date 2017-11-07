@@ -1,167 +1,108 @@
-﻿(function () {
-    var questions = [{
-        question: "Choose the next word to this song, all i want for christmas is",
-        choices: [me, a dog, money, you, a car],
-        correctAnswer: a dog
-    }, {
-        question: "How many reindeer are there on Santa's sleigh?",
-        choices: [3, 6, 9, 8, 18],
-        correctAnswer: 8
-    }, {
-        question: "How many days of christmas of there?",
-        choices: [24, 31, 25, 15, 11],
-        correctAnswer: 25
-    }, {
-        question: "What colour is Santa's Coat?",
-        choices: [Blue, White, Black, Red, Brown],
-        correctAnswer: Red
-    }, {
-            question: "In which country is Father Christmas known as Weihnachtsmann?",
-        choices: [England, China, Russia, Germany, Scotland],
-        correctAnswer: Germany
-    }];
-
-    var questionCounter = 0; //Tracks question number
-    var selections = []; //Array containing user choices
-    var quiz = $('#quiz'); //Quiz div object
-
-    // Display initial question
-    displayNext();
-
-    // Click handler for the 'next' button
-    $('#next').on('click', function (e) {
-        e.preventDefault();
-
-        // Suspend click listener during fade animation
-        if (quiz.is(':animated')) {
-            return false;
-        }
-        choose();
-
-        // If no user selection, progress is stopped
-        if (isNaN(selections[questionCounter])) {
-            alert('Please make a selection!');
-        } else {
-            questionCounter++;
-            displayNext();
-        }
-    });
-
-    // Click handler for the 'prev' button
-    $('#prev').on('click', function (e) {
-        e.preventDefault();
-
-        if (quiz.is(':animated')) {
-            return false;
-        }
-        choose();
-        questionCounter--;
-        displayNext();
-    });
-
-    // Click handler for the 'Start Over' button
-    $('#start').on('click', function (e) {
-        e.preventDefault();
-
-        if (quiz.is(':animated')) {
-            return false;
-        }
-        questionCounter = 0;
-        selections = [];
-        displayNext();
-        $('#start').hide();
-    });
-
-    // Animates buttons on hover
-    $('.button').on('mouseenter', function () {
-        $(this).addClass('active');
-    });
-    $('.button').on('mouseleave', function () {
-        $(this).removeClass('active');
-    });
-
-    // Creates and returns the div that contains the questions and 
-    // the answer selections
-    function createQuestionElement(index) {
-        var qElement = $('<div>', {
-            id: 'question'
-        });
-
-        var header = $('<h2>Question ' + (index + 1) + ':</h2>');
-        qElement.append(header);
-
-        var question = $('<p>').append(questions[index].question);
-        qElement.append(question);
-
-        var radioButtons = createRadios(index);
-        qElement.append(radioButtons);
-
-        return qElement;
+﻿var myQuestions = [
+    {
+        question: "Finish this song, All i want for christmas....?",
+        answers: {
+            a: 'is a dog',
+            b: 'is you',
+            c: 'is money'
+        },
+        correctAnswer: 'b'
+    },
+    {
+        question: "What colour was santa's coat before Coca-Cola brought the rights?",
+        answers: {
+            a: 'Blue',
+            b: 'Red',
+            c: 'Green'
+        },
+        correctAnswer: 'c'
     }
+];
 
-    // Creates a list of the answer choices as radio inputs
-    function createRadios(index) {
-        var radioList = $('<ul>');
-        var item;
-        var input = '';
-        for (var i = 0; i < questions[index].choices.length; i++) {
-            item = $('<li>');
-            input = '<input type="radio" name="answer" value=' + i + ' />';
-            input += questions[index].choices[i];
-            item.append(input);
-            radioList.append(item);
-        }
-        return radioList;
-    }
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
 
-    // Reads the user selection and pushes the value to an array
-    function choose() {
-        selections[questionCounter] = +$('input[name="answer"]:checked').val();
-    }
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
-    // Displays next requested element
-    function displayNext() {
-        quiz.fadeOut(function () {
-            $('#question').remove();
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
 
-            if (questionCounter < questions.length) {
-                var nextQuestion = createQuestionElement(questionCounter);
-                quiz.append(nextQuestion).fadeIn();
-                if (!(isNaN(selections[questionCounter]))) {
-                    $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
-                }
+    function showQuestions(questions, quizContainer) {
+        // we'll need a place to store the output and the answer choices
+        var output = [];
+        var answers;
 
-                // Controls display of 'prev' button
-                if (questionCounter === 1) {
-                    $('#prev').show();
-                } else if (questionCounter === 0) {
+        // for each question...
+        for (var i = 0; i < questions.length; i++) {
 
-                    $('#prev').hide();
-                    $('#next').show();
-                }
-            } else {
-                var scoreElem = displayScore();
-                quiz.append(scoreElem).fadeIn();
-                $('#next').hide();
-                $('#prev').hide();
-                $('#start').show();
+            // first reset the list of answers
+            answers = [];
+
+            // for each available answer...
+            for (letter in questions[i].answers) {
+
+                // ...add an html radio button
+                answers.push(
+                    '<label>'
+                    + '<input type="radio" name="question' + i + '" value="' + letter + '">'
+                    + letter + ': '
+                    + questions[i].answers[letter]
+                    + '</label>'
+                );
             }
-        });
+
+            // add this question and its answers to the output
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+                + '<div class="answers">' + answers.join('') + '</div>'
+            );
+        }
+
+        // finally combine our output list into one string of html and put it on the page
+        quizContainer.innerHTML = output.join('');
     }
 
-    // Computes score and returns a paragraph element to be displayed
-    function displayScore() {
-        var score = $('<p>', { id: 'question' });
 
+    function showResults(questions, quizContainer, resultsContainer) {
+
+        // gather answer containers from our quiz
+        var answerContainers = quizContainer.querySelectorAll('.answers');
+
+        // keep track of user's answers
+        var userAnswer = '';
         var numCorrect = 0;
-        for (var i = 0; i < selections.length; i++) {
-            if (selections[i] === questions[i].correctAnswer) {
+
+        // for each question...
+        for (var i = 0; i < questions.length; i++) {
+
+            // find selected answer
+            userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
+
+            // if answer is correct
+            if (userAnswer === questions[i].correctAnswer) {
+                // add to the number of correct answers
                 numCorrect++;
+
+                // color the answers green
+                answerContainers[i].style.color = 'lightgreen';
+            }
+            // if answer is wrong or blank
+            else {
+                // color the answers red
+                answerContainers[i].style.color = 'red';
             }
         }
 
-        score.append('You got ' + numCorrect + ' questions out of ' +
-            questions.length + ' right!!!');
-        return score;
+        // show number of correct answers out of total
+        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
     }
-})();
+
+    // show questions right away
+    showQuestions(questions, quizContainer);
+
+    // on submit, show results
+    submitButton.onclick = function () {
+        showResults(questions, quizContainer, resultsContainer);
+    }
+
+}
