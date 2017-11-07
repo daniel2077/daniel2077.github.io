@@ -1,75 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <h3>Christmas Cookies: <span id="Cookies">0</span>  MPS: <span id="cookiesPerSecond">0</span><br /> <button onclick="ChristmasCookiesClick()">Bake Cookies</button></h3>
+    <meta charset="utf-8" />
+    <title>Christmas Cookie Cliker</title>
+    <h3><button onclick="cookieclick(1)">Bake</button> Cookies: <span id="Cookies">0<</span></h3>
+
 </head>
 <body>
-    <h3> </h3>
-    <p>Click Upgrade: <span id="clickUpgradeCost">100</span> <button onclick="buyClickUpgrade()">Buy Click Upgrade</button>
-    <p><button onclick="buyBeginner()">Buy Beginner</button> Cost: <span id="beginnerCost">10</span></p>
+    <script>
+        var Cookies = 0;
+
+        function cookieclick(number) {
+            Cookies = Cookies + number;
+            document.getElementById("Cookies").innerHTML = Cookies;
+        }
+
+
+        </script>
 </body>
 </html>
-
-
-<script>
-    var ChristmasCookies = 0;
-    var beginner = 0;
-    var mpc = 1;
-    var cookiesPerSecond = 0;
-    var clicks = 0;
-
-    function ChristmasCookiesClick() {
-        ChristmasCookies += mpc;
-        clicks += 1;
-        document.getElementById("ChristmasCookies").innerHTML = prettify(ChristmasCookies);
-    }
-
-    function mps() {
-        ChristmasCookies += cookiesPerSecond;
-        document.getElementById('ChristmasCookies').innerHTML = prettify(ChristmasCookies);
-        document.getElementById('cookiesPerSecond').innerHTML = prettify(cookiesPerSecond);
-    }
-
-    function buyClickUpgrade() {
-        var clickUpgradeCost = Math.floor(100 * Math.pow(1.0, mpc));
-        if (ChristmasCookies >= clickUpgradeCost) {
-            mpc++;
-            ChristmasCookies -= clickUpgradeCost;
-            document.getElementById('clickUpgradeCost').innerHTML = clickUpgradeCost;
-        }
-        var nextCost = Math.floor(10 * Math.pow(3.2, mpc));
-        document.getElementById('clickUpgradeCost').innerHTML = nextCost;
-    }
-
-    function buyBeginner() {
-        var beginnerCost = Math.floor(10 * Math.pow(1.1, beginner));
-        if (ChristmasCookies >= beginnerCost) {
-            beginner += 0.1;
-            cookiesPerSecond += 0.1;
-            ChristmasCookies -= beginnerCost;
-            document.getElementById('ChristmasCookies').innerHTML = prettify(ChristmasCookies);
-            document.getElementById('cookiesPerSecond').innerHTML = prettify(cookiesPerSecond);
-        }
-        var nextCost = Math.floor(10 * Math.pow(3.2, beginner));
-        document.getElementById('beginnerCost').innerHTML = prettify(nextCost);
-    }
-
-    window.setInterval(mps, 1000);
-
-
-    function prettify(input) {
-        var output = Math.round(input * 1000000) / 1000000;
-        return output;
-
-    }
-
-    var hundredClicks = 100;
-
-    function clicks() {
-        if (click == hundredClicks) {
-            alert("Congrats on 100 clicks");
-        }
-    }
-
-    window.setInterval(clicks, 1);
-</script>
