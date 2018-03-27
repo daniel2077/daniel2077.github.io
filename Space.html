@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Copse' rel='stylesheet'>
+    <style>
+       header {
+           background-size: cover;
+       }
+
+       video {
+           min-height: 100vh;
+           min-width: 100vw;
+           object-fit: cover;
+       }
+
+       body {
+           margin: 0;
+       }
+        .overlay {
+            font-family: 'Copse';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #000000;
+            margin-top: 25px;
+            font-size: 100px;
+            text-align: center;
+            -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 5s; /* Firefox < 16 */
+            -ms-animation: fadein 5s; /* Internet Explorer */
+            -o-animation: fadein 5s; /* Opera < 12.1 */
+            animation: fadein 5s;
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Firefox < 16 */
+        @-moz-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Safari, Chrome and Opera > 12.1 */
+        @-webkit-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Internet Explorer */
+        @-ms-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Opera < 12.1 */
+        @-o-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        } 
+        
+
+        h1 {
+            font-family: 'Copse';
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <video src="videos/space1.mp4" autoplay loop muted></video>
+        <div class="overlay"
+             <h1>Space</h1>
+             </div>
+    </header>
+
+</body>
+</html>
