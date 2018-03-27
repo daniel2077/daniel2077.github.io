@@ -116,19 +116,24 @@
 
 
 
-        .zoom {
-            padding: 50px;
-            background-color: green;
-            transition: transform .2s;
-            width: 200px;
+        .frame {
             height: 200px;
-            margin: 0 auto;
+            width: 200px;
+            overflow: hidden;
         }
 
-            .zoom:hover {
-                -ms-transform: scale(1.5); /* IE 9 */
-                -webkit-transform: scale(1.5); /* Safari 3-8 */
-                transform: scale(1.5);
+        .zoomin img {
+            height: 200px;
+            width: 200px;
+            -webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -ms-transition: all 2s ease;
+            transition: all 2s ease;
+        }
+
+            .zoomin img:hover {
+                width: 300px;
+                height: 300px;
             }
 
 
@@ -197,6 +202,13 @@
         });
     </script>
         
+    <h1>Planets</h1>
+    <div class="zoomin frame"> <img src="images/moon.png" title="Scale on Hover with Transition using CSS" class="center" /> </div>
+
+
+
+
+
             <br />
             <br />
             <br />
