@@ -118,11 +118,7 @@
 
 
 
-        .frame {
-            height: 200px;
-            width: 200px;
-            overflow: hidden;
-        }
+        
 
         .zoomin img {
             height: 200px;
@@ -157,8 +153,17 @@
         .fact {
             color:white;
         }
-        
-        
+
+        #myimages {
+            white-space: nowrap;
+        }
+
+            #myimages img {
+                display: block;
+                float: left;
+                margin: 20px;
+            }
+
     
     
     </style>
@@ -204,10 +209,15 @@
     </script>
         
     <h1>Planets</h1>
-    <div class="zoomin frame"> <img src="images/moon.png" class="center" /></div>
-    <div class="zoomin frame"> <img src="images/mars.png" class="center" /> </div>
+    <div class="zoomin frame"> <img src="images/moon.png"/></div>
+    <p>The Moon</p>
+    <div class="zoomin frame"> <img src="images/mars.png"/></div>
+    <p>Mars</p>
 
-   
+        
+    
+        
+    
 
 
 
