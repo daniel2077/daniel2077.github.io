@@ -1,235 +1,27 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Copse' rel='stylesheet'>
-    <style>
-       header {
-           background-size: cover;
-       }
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-       video {
-           min-height: 100vh;
-           min-width: 100vw;
-           object-fit: cover;
-       }
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	
+	
+	
+	<title>CyberLocked Homepage</title>
 
-        body {
-            margin: 0;
-            background-color: grey;
-            background-image: url('images/spacebackground.jpg');
-            text-align: center;
-            color:white;
-            font-family: 'Copse';
-            font-size: 40px;
-            display: block;
-            
-            
-        }
-        .overlay {
-            font-family: 'Copse';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: #000000;
-            margin-top: 25px;
-            font-size: 100px;
-            text-align: center;
-            -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 5s; /* Firefox < 16 */
-            -ms-animation: fadein 5s; /* Internet Explorer */
-            -o-animation: fadein 5s; /* Opera < 12.1 */
-            animation: fadein 5s;
-        }
-
-        @keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Firefox < 16 */
-        @-moz-keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Safari, Chrome and Opera > 12.1 */
-        @-webkit-keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Internet Explorer */
-        @-ms-keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Opera < 12.1 */
-        @-o-keyframes fadein {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-        } 
-        
-
-        h1 {
-            font-family: 'Copse';
-            
-        }
-
-        .text {
-            font-family: 'Copse';
-            font-size: 50px;
-            text-align: center;
-            color: white;
-        }
-
-
-
-        
-
-        .zoomin img {
-            height: 200px;
-            width: 200px;
-            -webkit-transition: all 2s ease;
-            -moz-transition: all 2s ease;
-            -ms-transition: all 2s ease;
-            transition: all 2s ease;
-            
-        }
-
-            .zoomin img:hover {
-                width: 300px;
-                height: 300px;
-            }
-
-
-        a {
-            background-color: grey;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            font-family: 'Copse'
-        }
-        
-        .fact {
-            color:white;
-        }
-
-        #myimages {
-            white-space: nowrap;
-        }
-
-            #myimages img {
-                display: block;
-                float: left;
-                margin: 20px;
-            }
-
-        .myButtom {
-            border-radius: 12px;
-        }
-    
-    </style>
 </head>
+
 <body>
-    <header>
-        <video src="videos/space1.mp4" autoplay loop muted></video>
-        <div class="overlay"
-             <h1>Space</h1>
-        </div>
-    </header>
-    <div class="text"
-    <h1>Did you know...</h1>
-    </div>
-    
-    <a id="myButton" href="#">
-        New Fact
-    </a>
-
-    <div id="myRandomDiv">
-    </div>
-
-    
-    <script type="text/javascript" charset="utf-8">
-       
-        var randomStrings = [
-            "All of space is completely silent",
-            "The Apollo astronauts' footprints on the moon will probably stay there for at least 100 million years",
-            "There is an uncountable number of stars in the known universe",
-            "99% of our solar system's mass is the sun",
-            "More energy from the sun hits Earth every hour than the planet uses in a year",
-            "One million Earths could fit inside the sun – and the sun is considered an average-size star",
-            "Comets are leftovers from the creation of our solar system about 4.5 billion years ago – they consist of sand, ice and carbon dioxide",
-            "If you could fly a plane to Pluto, the trip would take more than 800 years!",
-            "You wouldn’t be able to walk on Jupiter, Saturn, Uranus or Neptune because they have no solid surface!",
-            "An asteroid about the size of a car enters Earth’s atmosphere roughly once a year",
-            "The sunset on Mars appears blue", 
-
-        ];
-        
-        
-
-        var randomDiv = document.getElementById("myRandomDiv");
-
-        document.getElementById("myButton").addEventListener("click", function () {
-            randomIndex = Math.ceil((Math.random() * randomStrings.length - 1));
-            newText = randomStrings[randomIndex];
-            randomDiv.innerHTML = newText;
-        });
-    </script>
-        
-    <h1>Planets</h1>
-    <div class="zoomin frame"> <img src="images/moon1.png"/></div>
-    <p>The Moon</p>
-    <div class="zoomin frame"> <img src="images/mars.png"/></div>
-    <p>Mars</p>
-
-        
-    
-        
-    
-
-
-
-          
-</body>
+	<div class="title">
+	
+	<h1>Welcome to CyberLocked</h1> <img src="img/thumb_EFS_lock.png" width="30px" height="30px"alt="Yellow Lock">
+	
+	</div>
+	
+	
+	</body>
 </html>
+
