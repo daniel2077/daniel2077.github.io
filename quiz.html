@@ -36,6 +36,9 @@
      
      <h4>What color are the berries of the mistletoe plant?</h4>
      <input id="textbox" type="text" name="question3">
+	 
+	 <h4>Whose eyes were made of coal?</h4>
+     <input id="textbox" type="text" name="question4">
      
      
      <input id="button" type="button" value="I'm finished!" onclick="check();">
@@ -59,6 +62,7 @@
 var question1=document.quiz.question1.value;
 var question2=document.quiz.question2.value;
 var question3=document.quiz.question3.value;
+var question4=document.quiz.question4.value;
 var correct=0;
 
 
@@ -76,9 +80,13 @@ var correct=0;
       correct++;
   }
 
+  
+  if (question4=="frosty the snowman") {
+	  correct++;
+  }
 
 var messages=["Great job!","That's just okay!","You really need to do better"];
-var pictures=["https://media1.giphy.com/media/11sBLVxNs7v6WA/giphy.gif","https://media1.giphy.com/media/Nm9hS20D4swVO/200w.gif","https://media.giphy.com/media/xUA7aRaGvA53VSlxUk/giphy.gif"];
+
 
 var range;
 
@@ -100,7 +108,7 @@ document.getElementById("after_submit").style.visibility="visible";
 
 document.getElementById("messages").innerHTML=messages[range];
 document.getElementById("number_correct").innerHTML="&rarr;you got "+correct+" correct.";
-document.getElementById("pictures").src=pictures[range];
+
 
 
 }
