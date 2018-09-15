@@ -42,6 +42,18 @@
 	 
 	 <h4>Which reindeer's name starts with the letter "B"?</h4>
      <input id="textbox" type="text" name="question5">
+	 
+	 <h4>Which country is Eggnog said to have originated from?</h4>
+     <input id="textbox" type="text" name="question6">
+	 
+	 <h4>How many reindeer does santa have?</h4>
+     <input id="textbox" type="text" name="question7">
+	 
+	 <h4>True or false: Jesus was born on Christmas Day?</h4>
+     <input id="textbox" type="text" name="question8">
+	 
+	 <h4>True or false: There are three towns/cities in the United States named Santa Claus?</h4>
+     <input id="textbox" type="text" name="question9">
      
      <br>
      <input id="button" type="button" value="I'm finished!" onclick="check();">
@@ -67,6 +79,10 @@ var question2=document.quiz.question2.value;
 var question3=document.quiz.question3.value;
 var question4=document.quiz.question4.value;
 var question5=document.quiz.question5.value;
+var question6=document.quiz.question6.value;
+var question7=document.quiz.question7.value;
+var question8=document.quiz.question8.value;
+var question9=document.quiz.question9.value;
 var correct=0;
 
 
@@ -93,6 +109,26 @@ var correct=0;
   if (question5=="blitzen") {
 	  correct++;
   }
+	
+  
+  if (question6=="england") {
+	  correct++;
+  }
+  
+  
+  if (question7=="8") {
+	  correct++;
+  }
+  
+  
+  if (question8=="false") {
+	  correct++;
+  }
+  
+  if (question9=="true") {
+	  correct++;
+  }
+
 
 
 var messages=["Great job!","That's just okay!","You really need to do better"];
