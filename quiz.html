@@ -7,9 +7,9 @@
 
 
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="quizstyle.css">
 	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
-	<title>Christmas Countdown</title>
+	<title>Christmas Quiz</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
@@ -17,44 +17,115 @@
 <body>
 	
 
-	<h2><a href=index.html>Home</a> | <a href=quiz.html>Quiz</a> | Facts | Contact me</h2>
+	<h2><a href=index.html>Home</a> | <a href=“quiz.html”>Quiz</a> | Facts | Contact me</h2>
 	
 	<br>
 	
-	<h1>Christmas Countdown</h1>
+	<h1>Christmas Quiz</h1>
 		<p id="demo"></p>
+		<div class="quiz">
+		<h4>Please type your answers without capital letters.</h4>
+		
+     <form id="quiz" name="quiz">
+        
+     <h4>Finish the name of the song I wish it could be christmas ____________</h4>
+     <input id="textbox" type="text" name="question1">
+     
+     <h4>Which US singer sang "All I Want For Christmas Is You" in 1994?</h4>
+     <input id="textbox" type="text" name="question2">
+     
+     <h4>What color are the berries of the mistletoe plant?</h4>
+     <input id="textbox" type="text" name="question3">
+     
+     
+     <input id="button" type="button" value="I'm finished!" onclick="check();">
+     
+     </form>
+     
+     <div id="after_submit"></div>
+     
+     <p id="messages"></p>
+     <p id="number_correct"></p>
+     <img id="pictures">
+		
+		</div>
+		
+		
+		
+		
+		<script>
+		function check(){
+  
+var question1=document.quiz.question1.value;
+var question2=document.quiz.question2.value;
+var question3=document.quiz.question3.value;
+var correct=0;
 
-<script>
 
-var countDownDate = new Date("Dec 25, 2018 12:01:00").getTime();
+    if (question1=="everyday"){
+        correct++;
+  }
 
 
-var x = setInterval(function() {
+   if (question2=="mariah carey"){
+       correct++;
+  }  
 
-    
-    var now = new Date().getTime();
-    
-    
-    var distance = countDownDate - now;
-    
-    
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-   
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
-    
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-}, 1000);
-</script>
-	
+
+  if (question3=="white"){
+      correct++;
+  }
+
+
+var messages=["Great job!","That's just okay!","You really need to do better"];
+var pictures=["https://media1.giphy.com/media/11sBLVxNs7v6WA/giphy.gif","https://media1.giphy.com/media/Nm9hS20D4swVO/200w.gif","https://media.giphy.com/media/xUA7aRaGvA53VSlxUk/giphy.gif"];
+
+var range;
+
+  if(correct<1){
+      range=2;
+  }
+  
+  if(correct>0&&correct<3){
+      range=1;
+  }
+  
+  if(correct>2){
+      range=0;
+  }
+
+
+document.getElementById("after_submit").style.visibility="visible";
+
+
+document.getElementById("messages").innerHTML=messages[range];
+document.getElementById("number_correct").innerHTML="&rarr;you got "+correct+" correct.";
+document.getElementById("pictures").src=pictures[range];
+
+
+}
+
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 	
@@ -78,7 +149,7 @@ window.open("autumn_effect.htm","","width=350,height=500")
   //Configure below to change URL path to the snow image
   var snowsrc="img/snow3.gif"
   // Configure below to change number of snow to render
-  var no = 50;
+  var no = 20;
   // Configure whether snow should disappear after x seconds (0=never):
   var hidesnowtime = 0;
   // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
@@ -180,6 +251,8 @@ if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(mes
 document.onmousedown = rtclickcheck;
 
 </SCRIPT>
+	
+	
 	
 	
 	

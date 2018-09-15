@@ -1,0 +1,44 @@
+body{
+	
+	background-image: url("img/background.jpg");
+	font-family: 'Mountains of Christmas', cursive;
+	color: green;
+	
+	
+}
+
+h1{	
+	position: relative;
+    left: 220px;
+	font-size: 80px;
+	bottom: 60px;
+
+
+
+}
+h2{
+	position: relative;
+    left: 279px;
+	font-size: 30px;
+	color: red;
+
+
+
+}
+
+
+p{
+	position: relative;
+	left: 240px;
+	font-size: 25px;
+	bottom: 220px;
+	color: red;
+
+}
+
+ .quiz {
+ position: relative;
+    left: 225px;
+	bottom: 40px;
+ 
+ }
