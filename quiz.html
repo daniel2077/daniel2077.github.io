@@ -60,6 +60,12 @@
 	 
 	 <h4>Which popular Christmas movie is about a young boy who takes a train ride to the North Pole?</h4>
      <input id="textbox" type="text" name="question11">
+	 
+	 <h4>Which meat do we traditionally eat with Christmas dinner?</h4>
+     <input id="textbox" type="text" name="question12">
+	 
+	 <h4>How many doors would you open on an advent calendar before Christmas Day arrives?</h4>
+     <input id="textbox" type="text" name="question13">
      
      <br>
      <input id="button" type="button" value="I'm finished!" onclick="check();">
@@ -91,6 +97,8 @@ var question8=document.quiz.question8.value;
 var question9=document.quiz.question9.value;
 var question9=document.quiz.question10.value;
 var question9=document.quiz.question11.value;
+var question9=document.quiz.question12.value;
+var question9=document.quiz.question13.value;
 var correct=0;
 
 
@@ -143,9 +151,19 @@ var correct=0;
   }
   
   
-  if (question10=="the polar express") {
+  if (question11=="the polar express") {
 	  correct++;
   }
+  
+  if (question12=="turkey") {
+	  correct++;
+  }
+  
+  
+  if (question13=="24") {
+	  correct++;
+  }
+
 
 
 
