@@ -1,59 +1,26 @@
-body {
-	font-family: Montserrat;
-	text-align: center;
-	background-color: lightgrey;
-
-}
-
-
-h1 {
-	text-align: center;
-	color: yellow;
+body{
+	
+	background-image: url("img/background.jpg");
+	font-family: 'Mountains of Christmas', cursive;
+	color: green;
 	
 }
 
-.title {
-	border: 3px solid grey;
-	background-color: grey;
+h1{	
+	position: relative;
+    left: 220px;
+	font-size: 80px;
+	bottom: 60px;
 
-
-}
-
-ul {
-position:absolute;
-left:50%;top:0;
-list-style-type:none;
-margin-left:-193px;
-padding:0;
-overflow:hidden;
-width:800px;
-	
 
 
 }
-a:link,a:visited{
-display:block;
-color:#FFFFFF;
-font-weight:bold;
-background-color:#4286f4;
-width:120px;
-text-align:center;
-padding:4px;
-text-transform:uppercase;
-text-decoration:none;
-opacity: 0.40;
-font-size: 100%;
 
-	
-}
-a:hover,a:active{
-background-color:lightblue;
-opacity: 1.00;
-}
-li {
-float:left;
+p{
+	position: relative;
+	left: 90px;
+	font-size: 150px;
+	bottom: 150px;
+
 }
 
-a {
-text-align:center;
-}
