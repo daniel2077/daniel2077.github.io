@@ -29,10 +29,10 @@ h2{
 
 p{
 	position: relative;
-	left: 240px;
-	font-size: 25px;
+	left: 390px;
+	font-size: 50px;
 	bottom: 220px;
-	color: red;
+	color: green;
 
 }
 
@@ -40,5 +40,21 @@ p{
  position: relative;
     left: 225px;
 	bottom: 40px;
+ 
+ }
+ 
+ h4{
+ font-size: 30px;
+ color: red;
+ 
+ 
+ }
+ 
+ #messages{
+ 
+	 position: relative;
+    left: 550px;
+ 
+ 
  
  }

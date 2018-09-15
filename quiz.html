@@ -39,8 +39,11 @@
 	 
 	 <h4>Whose eyes were made of coal?</h4>
      <input id="textbox" type="text" name="question4">
+	 
+	 <h4>Which reindeer's name starts with the letter "B"?</h4>
+     <input id="textbox" type="text" name="question5">
      
-     
+     <br>
      <input id="button" type="button" value="I'm finished!" onclick="check();">
      
      </form>
@@ -63,6 +66,7 @@ var question1=document.quiz.question1.value;
 var question2=document.quiz.question2.value;
 var question3=document.quiz.question3.value;
 var question4=document.quiz.question4.value;
+var question5=document.quiz.question5.value;
 var correct=0;
 
 
@@ -84,6 +88,12 @@ var correct=0;
   if (question4=="frosty the snowman") {
 	  correct++;
   }
+  
+  
+  if (question5=="blitzen") {
+	  correct++;
+  }
+
 
 var messages=["Great job!","That's just okay!","You really need to do better"];
 
@@ -137,7 +147,7 @@ document.getElementById("number_correct").innerHTML="&rarr;you got "+correct+" c
 	
 	
 	
-	<embed src="music/whitechristmas.m4a" autostart="true" loop="true"
+	<embed src="music/iwishitcould.mp3" autostart="true" loop="true"
 width="2" height="0">
 </embed>
 
