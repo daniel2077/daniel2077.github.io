@@ -54,6 +54,12 @@
 	 
 	 <h4>True or false: There are three towns/cities in the United States named Santa Claus?</h4>
      <input id="textbox" type="text" name="question9">
+	 
+	 <h4>In which country is Father Christmas known as Weihnachtsmann?</h4>
+     <input id="textbox" type="text" name="question10">
+	 
+	 <h4>Which popular Christmas movie is about a young boy who takes a train ride to the North Pole?</h4>
+     <input id="textbox" type="text" name="question11">
      
      <br>
      <input id="button" type="button" value="I'm finished!" onclick="check();">
@@ -83,6 +89,8 @@ var question6=document.quiz.question6.value;
 var question7=document.quiz.question7.value;
 var question8=document.quiz.question8.value;
 var question9=document.quiz.question9.value;
+var question9=document.quiz.question10.value;
+var question9=document.quiz.question11.value;
 var correct=0;
 
 
@@ -128,6 +136,17 @@ var correct=0;
   if (question9=="true") {
 	  correct++;
   }
+  
+  
+  if (question10=="germany") {
+	  correct++;
+  }
+  
+  
+  if (question10=="the polar express") {
+	  correct++;
+  }
+
 
 
 
