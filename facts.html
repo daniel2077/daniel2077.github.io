@@ -7,9 +7,9 @@
 
 
 
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="factsstyle.css">
 	<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
-	<title>Christmas Countdown</title>
+	<title>Christmas Facts</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,15 +22,39 @@
 	
 	<br>
 	
-	<h1>Christmas Countdown</h1>
-		<p id="demo"></p>
+	<h1>Christmas Myths</h1>
+		
 
 
 	
 	
+	<input type="button" id="btnSearch" value="Chirstmas Myth" onclick="GetValue();" />
+	<div class="myth">
+	<br>
+	<p id="message" ></p>
 	
 	
-	<embed src="music/alliwant.mp3" autostart="true" loop="true"
+	<script>
+	function GetValue()
+{
+    var myarray= new Array("Krampus is one of the most common Christmas myths. <br>It’s slowly growing in popularity in America and has made several TV appearances<br> on American Dad!, Grimm, and Krampus, an upcoming horror comedy. <br>The German tale goes way back and tells the story of a large horned creature that works opposite Santa Claus, <br>abducting and killing naughty children.",
+	"Probably the creepiest of Christmas myths, Grýla is a mountain giantess/troll.<br> According to Icelandic folklore, she travels from the mountains in search of naughty children. <br>When she finds them, she abducts them and eats them. Is it any surprise children are rarely naughty in Iceland?",
+	"item3");
+    var random = myarray[Math.floor(Math.random() * myarray.length)];
+    //alert(random);
+    document.getElementById("message").innerHTML=random;
+}
+	
+	</script>
+	</div>
+	
+<div> 
+    <img src="img/snowman.png" width="472" height="412"/>
+</div>
+	
+	
+	
+<embed src="music/alliwant.mp3" autostart="true" loop="true"
 width="2" height="0">
 </embed>
 
